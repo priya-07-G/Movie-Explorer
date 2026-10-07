@@ -1,0 +1,342 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b12;
+    color: white;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 35px 20px 25px;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        #15152b,
+        #0b0b12
+    );
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+input {
+    display: block;
+
+    width: 450px;
+    max-width: 90%;
+
+    margin: 20px auto 10px;
+
+    padding: 15px 20px;
+
+    background: #171722;
+    color: white;
+
+    border: 1px solid #333344;
+    border-radius: 30px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #888899;
+}
+
+input:focus {
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 15px rgba(229, 9, 20, 0.25);
+}
+
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+input + button {
+    display: block;
+
+    margin: 15px auto;
+
+    padding: 12px 28px;
+
+    background: #e50914;
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+input + button:hover {
+    background: #ff1e2d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 9, 20, 0.3);
+}
+
+
+/* =========================
+   CATEGORY FILTERS
+========================= */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 25px auto 35px;
+
+    padding: 0 15px;
+}
+
+.filters button {
+    padding: 9px 20px;
+
+    background: #181824;
+    color: #c7c7d4;
+
+    border: 1px solid #30303d;
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background: #e50914;
+    color: white;
+
+    border-color: #e50914;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOVIE CARD
+========================= */
+
+.movie-card {
+    display: flex;
+
+    width: 500px;
+    max-width: 92%;
+
+    margin: 20px auto;
+
+    padding: 15px;
+
+    background: #15151f;
+
+    border: 1px solid #292936;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.55),
+        0 0 20px rgba(229, 9, 20, 0.12);
+}
+
+
+/* =========================
+   POSTER
+========================= */
+
+.movie-card img {
+    width: 140px;
+    height: 205px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    background: #222230;
+}
+
+
+/* =========================
+   MOVIE INFO
+========================= */
+
+.movie-info {
+    padding: 5px 10px 5px 20px;
+
+    flex: 1;
+}
+
+.movie-info h2 {
+    margin: 5px 0 15px;
+
+    font-size: 21px;
+
+    color: white;
+}
+
+.movie-info p {
+    margin: 9px 0;
+
+    font-size: 14px;
+
+    color: #b8b8c7;
+}
+
+
+/* =========================
+   VIEW DETAILS
+========================= */
+
+.movie-info a {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 9px 17px;
+
+    background: #e50914;
+    color: white;
+
+    border-radius: 22px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.movie-info a:hover {
+    background: #ff1e2d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+body p {
+    color: #c7c7d4;
+}
+
+.filters + p {
+    text-align: center;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+        padding: 25px 10px 20px;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    .filters {
+        gap: 6px;
+    }
+
+    .filters button {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .movie-card {
+        width: 94%;
+
+        padding: 12px;
+    }
+
+    .movie-card img {
+        width: 105px;
+        height: 155px;
+    }
+
+    .movie-info {
+        padding-left: 13px;
+    }
+
+    .movie-info h2 {
+        font-size: 17px;
+    }
+
+    .movie-info p {
+        font-size: 12px;
+    }
+
+    .movie-info a {
+        font-size: 11px;
+
+        padding: 8px 12px;
+    }
+}
